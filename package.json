@@ -1,0 +1,24 @@
+{
+  "name": "spiralftw.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spiralftw/spiralftw.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spiralftw/spiralftw.github.io/issues"
+  },
+  "homepage": "https://github.com/spiralftw/spiralftw.github.io#readme",
+  "dependencies": {
+    "tsparticles-engine": "^2.12.0",
+    "tsparticles-slim": "^2.12.0"
+  }
+}
