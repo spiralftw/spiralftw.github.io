@@ -74,36 +74,6 @@ body::after {
     opacity: 0;
     animation: fadeIn 1.2s ease forwards 1.4s;
 }
-
-/* Scroll indicator (mouse) */
-.scroll-indicator {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards 2s;
-}
-
-.mouse {
-    width: 25px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    position: relative;
-}
-.mouse::before {
-    content: '';
-    width: 4px;
-    height: 8px;
-    background: var(--neon-pink);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 8px;
-    border-radius: 2px;
-    animation: scrollWheel 2s infinite;
-}
-
 /* Text flipper */
 #text-flipper {
     display: inline-block;
@@ -127,6 +97,7 @@ body::after {
     padding: 40px 20px;
     z-index: 20;
     position: relative;
+    margin-top: -120px;
 }
 
 .glass-link {
@@ -160,14 +131,26 @@ body::after {
 
 /* Responsive */
 @media (max-width: 600px) {
-    .links-container { flex-direction: column; align-items: center; }
-    .glass-link { width: 80%; justify-content: center; }
+    .links-container { 
+        flex-direction: column; 
+        align-items: center;
+        gap: 12px; /* Tighter gap for mobile */
+        padding: 20px; /* Reduced padding to save space */
+        margin-top: -80px; /* Adjust this value if you used Option 2 from before */
+    }
+
+    .glass-link { 
+        width: 90%; /* Wider buttons on mobile for easier thumb tapping */
+        padding: 12px 20px; /* Slimmer buttons */
+        font-size: 0.95rem; 
+        justify-content: flex-start; /* Aligns icon and text to the left */
+    }
+
+    .intro-title {
+        margin-bottom: 10px; /* Less space between title and links */
+    }
 }
 
 /* Animations */
 @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { to { opacity: 1; } }
-@keyframes scrollWheel {
-    0% { transform: translate(-50%, 0); opacity: 1; }
-    100% { transform: translate(-50%, 15px); opacity: 0; }
-}
